@@ -1,0 +1,70 @@
+﻿@using ClientRegistration.Models
+@using ClientRegistration.Models.Enums
+@model List<ClientRegistration.Models.Client>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>ClientRegister</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<header>
+
+</header>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Registro de Clientes</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Page 1</a>
+            </li>
+            <li>
+                <a href="#">Page 2</a>
+            </li>
+            <li>
+                <a href="#">Page 3</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Clientes Cadastrados</h2>
+    <button type="button" style="display: flex; justify-content: right">Criar Novo Cliente</button>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Telefone</th>
+            <th>Nível Inscrição</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (Client client in Model)
+        {
+            <tr class="active">
+                <td>@client.Id</td>
+                <td>@client.Name</td>
+                <td>@client.Email</td>
+                <td>@client.Phone</td>
+                <td>@Enum.GetName(typeof(Subscription), client.Subscription)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
