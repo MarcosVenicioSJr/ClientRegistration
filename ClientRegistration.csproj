@@ -10,7 +10,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.6" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Mappings\**" />
+    <Compile Remove="Mapping\ClientMapper.cs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Mappings\**" />
+    <EmbeddedResource Remove="Mapping\ClientMapper.cs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Mappings\**" />
+    <Content Remove="Mapping\ClientMapper.cs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Mappings\**" />
+    <None Remove="Mapping\ClientMapper.cs\**" />
   </ItemGroup>
 
 </Project>
