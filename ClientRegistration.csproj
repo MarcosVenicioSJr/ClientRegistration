@@ -21,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Remove="Mappings\**" />
     <Compile Remove="Mapping\ClientMapper.cs\**" />
   </ItemGroup>
@@ -43,5 +39,12 @@
     <None Remove="Mappings\**" />
     <None Remove="Mapping\ClientMapper.cs\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
 
 </Project>
