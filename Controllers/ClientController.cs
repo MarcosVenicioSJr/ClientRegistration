@@ -22,6 +22,4 @@ public class ClientController : Controller
         List<Client> clients =  await _clientRepository.GetClient(context);
         return View(clients);
     }
-    
-    
 }
